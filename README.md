@@ -16,7 +16,6 @@ To use, run the command: `./check.sh`
 
 To check specific input, enter the following: `./check.sh INPUT_CASE_NUMBER`
 For example, running: `./check.sh 7`
-
 prints the input, output, and expected output for case 7.
 
 ![alt text](https://github.com/AlekKwek18/C2030S-Lab-Testing-Script/blob/main/example2.png)
