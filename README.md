@@ -4,6 +4,8 @@
 
 The script will compile your LabX.java and automatically run all the test cases and specific test cases so that you can debug effectively.
 
+The script will check your Lab files in the directory and take the file with the highest number. e.g, in the directory, there are Lab1, Lab2, Lab3 -> the script will take Lab3 and run the test on it.
+
 For initial setup, run this command to set the permission of the script to execute: `chmod +x check.sh`
 
 **Usage:**
