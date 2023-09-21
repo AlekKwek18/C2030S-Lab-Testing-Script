@@ -27,15 +27,15 @@ done
 
 if [[ -n "$highest_filename" ]]; then
     labname=$(basename "$highest_filename" .java)
-   # echo "The file with the highest number is: $highest_name_without_extension"
 fi
 # Output the filename with the highest number
-#echo "The file with the highest number is: $highest_filename"
+
 
 # set permission to set.sh if needed
 chmod +x test.sh
 echo "CS2030S Internal Test Script"
 javac -Xlint:rawtypes -Xlint:unchecked $highest_filename
+
 
 echo "first line is buffer capacity -> if exceed, message will fail to send"
 echo "second line is number of agents"
@@ -44,12 +44,39 @@ if [ $# -eq 0 ]; then
   Nothing=nil
 else
   LAB=$1
+  CODEOUTPUT="java $labname < inputs/$labname.$LAB.in"
+  EXPECTEDOUTPUT="outputs/$labname.$LAB.out"
+  if [ ! -e "$EXPECTEDOUTPUT" ]; then
+    echo "ERROR: Input file '$EXPECTEDOUTPUT' not found."
+    exit 1
+  fi
+
   echo "INPUT"
   cat inputs/$labname.$LAB.in
+  echo " "
   echo "OUTPUT"
   java $labname < inputs/$labname.$LAB.in
+  
   echo "EXPECTED OUTPUT"
-  cat outputs/$labname.$LAB.out
+  #cat outputs/$labname.$LAB.out
+  cat $EXPECTEDOUTPUT
+  echo "DIFFERENCE IN OUTPUT"
+  # Compile and run the Java program 'Lab3', capturing its output
+  java_output=$(java $labname < inputs/$labname.$LAB.in)
+
+  # Specify the path to the reference output file
+  reference_output=$EXPECTEDOUTPUT
+
+  # Compare the Java program's output with the reference output file
+  diff_result=$(diff <(echo "$java_output") "$reference_output")
+
+  # Check if there are any differences
+  if [ -z "$diff_result" ]; then
+      echo "The Java program's output matches the test case output."
+  else
+      echo "Differences between the Java program's output and the reference output:"
+      echo "$diff_result"
+fi
 fi
 echo "TESTING"
 ./test.sh $labname

@@ -6,6 +6,14 @@ The script will compile your LabX.java and automatically run all the test cases 
 
 For initial setup, run this command to set the permission of the script to execute: `chmod +x check.sh`
 
+What the script does (in the following order)
+- Removes all .class file before compiling
+- Compiles the lab files
+- Set permission test.sh to execute
+- Enables user to enter any test case and see the actual and expected output
+- Run test.sh
+- Removes all .class file after test is completed
+
 **Usage:**
 
 To use, run the command: `./check.sh`
@@ -19,3 +27,8 @@ For example, running: `./check.sh 7`
 prints the input, output, and expected output for case 7.
 
 ![alt text](https://github.com/AlekKwek18/C2030S-Lab-Testing-Script/blob/main/example2.png)
+
+
+If your lab does not match the output, it will display this
+
+![alt text](https://github.com/AlekKwek18/C2030S-Lab-Testing-Script/blob/main/example3.png)
