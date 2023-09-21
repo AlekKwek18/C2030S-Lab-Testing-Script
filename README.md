@@ -26,7 +26,7 @@ For example, running: `./check.sh 7`
 
 prints the input, output, and expected output for case 7.
 
-![alt text](https://github.com/AlekKwek18/C2030S-Lab-Testing-Script/blob/main/example2.png)
+![alt text](https://github.com/AlekKwek18/C2030S-Lab-Testing-Script/blob/main/example4.png)
 
 
 If your lab does not match the output, it will display this
