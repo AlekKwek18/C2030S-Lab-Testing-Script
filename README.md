@@ -1,4 +1,4 @@
-# C2030S-Lab-Testing-Script - AY23/24 Semester 1
+# CS2030S-Lab-Testing-Script - AY23/24 Semester 1
 
 "check.sh" enables you to test for your CS2030S lab easily.
 
